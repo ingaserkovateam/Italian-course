@@ -3,49 +3,51 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Verso l’Italia – Corso di italiano</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Verso l’Italia</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-image: url('background.jpg');
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
       background-size: cover;
       background-position: center;
       height: 100vh;
-      color: white;
-      text-align: center;
       display: flex;
       flex-direction: column;
+      align-items: center;
       justify-content: center;
-      background-repeat: no-repeat;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
     }
+
     h1 {
       font-size: 3em;
-      margin-bottom: 0.3em;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
     }
-    h2 {
+
+    p {
       font-size: 1.5em;
-      font-weight: normal;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+      margin-bottom: 30px;
     }
-    .footer {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      font-size: 0.9em;
-      color: #f0f0f0;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+
+    a.button {
+      padding: 12px 24px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 1.2em;
+      transition: background-color 0.3s;
+    }
+
+    a.button:hover {
+      background-color: rgba(255, 255, 255, 0.2);
     }
   </style>
 </head>
 <body>
-  <div>
-    <h1>Verso l’Italia</h1>
-    <h2>Conosci l’Italia, vivi la lingua</h2>
-    <h2>Un corso esclusivo creato da Inga Serkova 🌟</h2>
-  </div>
-  <div class="footer">Benvenuto al corso di italiano livello A1</div>
+  <h1>Verso l’Italia</h1>
+  <p>Conosci l’Italia, vivi la lingua</p>
+  <a class="button" href="menu.html">🌟 Войти в курс</a>
 </body>
 </html>
