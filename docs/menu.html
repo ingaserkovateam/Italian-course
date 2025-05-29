@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu — Verso l’Italia</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      text-align: center;
+      color: #333;
+      padding: 40px;
+    }
+    h1 {
+      font-size: 2.8em;
+      margin-top: 180px;
+      color: #A94442;
+    }
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      width: 260px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card h3 {
+      color: #E74C3C;
+    }
+    .card a {
+      text-decoration: none;
+      color: #E74C3C;
+      font-weight: bold;
+    }
+    .heroes {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 60px;
+      flex-wrap: wrap;
+    }
+    .hero {
+      text-align: center;
+    }
+    .hero img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .hero p {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 60px;
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to Verso l’Italia</h1>
+
+  <div class="menu">
+    <div class="card">
+      <h3>🇮🇹 Start Level A1</h3>
+      <a href="#">Go to lessons</a>
+    </div>
+    <div class="card">
+      <h3>📖 Grammar Book</h3>
+      <a href="#">Open grammar</a>
+    </div>
+    <div class="card">
+      <h3>🎭 Mini-Stories</h3>
+      <a href="#">Read & play</a>
+    </div>
+    <div class="card">
+      <h3>🧪 Final Exam</h3>
+      <a href="#">Take the test</a>
+    </div>
+  </div>
+
+  <div class="heroes">
+    <div class="hero"><img src="elisa.jpg" alt="Elisa"><p>Elisa</p></div><div class="hero"><img src="alex.jpg" alt="Alex"><p>Alex</p></div><div class="hero"><img src="nonna_bruna.jpg" alt="Nonna Bruna"><p>Nonna Bruna</p></div><div class="hero"><img src="oscar.jpg" alt="Oscar"><p>Oscar</p></div>
+  </div>
+
+  <footer>
+    Progetto creato con amore 🇮🇹
+  </footer>
+
+</body>
+</html>
