@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scene 3 - A casa della nonna</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      padding: 20px;
+    }
+    .dialogue, .grammar, .exercises {
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(255,255,255,0.85);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .line {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .line img {
+      width: 60px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 12px;
+    }
+    .line span {
+      font-size: 1.2em;
+    }
+    audio {
+      display: block;
+      margin: 20px auto;
+    }
+    .nav {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .nav a {
+      margin: 10px;
+      background-color: #A93226;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1em;
+    }
+    .quiz {
+      margin-bottom: 25px;
+    }
+    button {
+      font-size: 1em;
+      padding: 6px 10px;
+      margin: 5px 5px 0 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dialogue">
+    <div class="line"><img src="elisa.png"><span>Nonna Bruna, finalmente siamo arrivati!</span></div>
+    <div class="line"><img src="nonna_final_uniform.png"><span>Benvenuti, cari! Avete fame?</span></div>
+    <div class="line"><img src="alex.png"><span>Questa casa è bellissima!</span></div>
+    <div class="line"><img src="oscar_fixed_circle.png"><span>Miaooo!</span></div>
+    <div class="line"><img src="nonna_final_uniform.png"><span>Oscar dice che siete simpatici!</span></div>
+    <div class="line"><img src="elisa.png"><span>Grazie! Possiamo aiutarti a cucinare?</span></div>
+    <div class="line"><img src="nonna_final_uniform.png"><span>Certo! Ma prima… un po’ di dolci!</span></div>
+    <audio controls src="dialogo_scene3_final.mp3"></audio>
+  </div>
+
+  <div class="grammar">
+    <h3>Grammar Notes</h3>
+    <ul>
+      <li><strong>avete fame?</strong> — Are you hungry? (use of <em>avere</em>)</li>
+      <li><strong>possiamo aiutarti</strong> — Can we help you? (modal verb + infinitive)</li>
+      <li><strong>un po’ di dolci</strong> — a bit of sweets (quantity expressions)</li>
+    </ul>
+  </div>
+
+  <div class="exercises">
+    <h3>Interactive Exercises</h3>
+
+    <div class="quiz">
+      <p><strong>1. What does “Avete fame?” mean?</strong></p>
+      <button onclick="alert('❌ Try again')">What’s your name?</button>
+      <button onclick="alert('✅ Correct!')">Are you hungry?</button>
+      <button onclick="alert('❌ Try again')">Where are you from?</button>
+    </div>
+
+    <div class="quiz">
+      <p><strong>2. Oscar dice che...</strong></p>
+      <button onclick="alert('✅ Correct!')">siete simpatici</button>
+      <button onclick="alert('❌ Try again')">avete fame</button>
+      <button onclick="alert('❌ Try again')">volete cucinare</button>
+    </div>
+
+    <div class="quiz">
+      
+      <p><strong>3. Reorder the words to form a sentence:</strong></p>
+      <p>Words: <code>a</code> <code>cucinare?</code> <code>aiutarti</code> <code>Possiamo</code></p>
+      <button onclick="alert('Correct order: Possiamo aiutarti a cucinare?')">Show Answer</button>
+    
+    </div>
+  </div>
+
+  <div class="nav">
+    <a href="scene2.html">← Back to Scene 2</a>
+    <a href="#">Next Scene →</a>
+  </div>
+
+</body>
+</html>
