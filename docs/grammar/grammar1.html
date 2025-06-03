@@ -1,1 +1,384 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #fdf9f6;
+    color: #3c2a33;
+    margin: 0;
+    padding: 30px;
+  }
+  .section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    border: 1px solid #e0d2e8;
+  }
+  h2 {
+    color: #5a2d58;
+    font-size: 24px;
+    border-bottom: 2px solid #d9c7db;
+    padding-bottom: 5px;
+    margin-top: 0;
+  }
+  h3 {
+    color: #7a3d74;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 6px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  th, td {
+    border: 1px solid #dacce3;
+    padding: 10px;
+    text-align: left;
+  }
+  th {
+    background-color: #f4eef6;
+    color: #5a2d58;
+  }
+
+  .exercise-box {
+    background: #f9f2f9;
+    border: 1px solid #dabfdb;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+
+  .option {
+    background: #f4dbe7;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 6px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .option:hover {
+    background: #ecc6dc;
+  }
+
+  .correct {
+    background-color: #cce9cc !important;
+  }
+
+  .wrong {
+    background-color: #f5b6ba !important;
+  }
+
+  .letter-btn {
+    background: #f4eef6;
+    padding: 14px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid transparent;
+  }
+
+  .letter-btn:hover {
+    background: #e3d6e8;
+    transform: scale(1.1);
+  }
+
+  .alphabet-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.letter-btn.active {
+    background: #7a3d74;
+    color: #fff;
+    font-weight: bold;
+    border-color: #5a2d58;
+  }
+
+  .display-box {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: #5a2d58;
+    min-height: 50px;
+  }
+</style>
+
+  <meta charset="UTF-8" />
+  <title>Grammar 1 — Italian Basics</title>
+  
+</head>
+<body>
+
+<section class="section">
+  <h2>🔤 Italian Alphabet</h2>
+  <div class="alphabet-container">
+    <div class="letter-btn" onclick="highlightLetter(this, 'A: amico (friend)')">A</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'B: banana (banana)')">B</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'C: casa (house)')">C</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'D: dente (tooth)')">D</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'E: elefante (elephant)')">E</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'F: finestra (window)')">F</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'G: gatto (cat)')">G</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'H: hotel (hotel)')">H</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'I: isola (island)')">I</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'L: luna (moon)')">L</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'M: mano (hand)')">M</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'N: nave (ship)')">N</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'O: occhio (eye)')">O</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'P: pane (bread)')">P</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'Q: quadro (painting)')">Q</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'R: ragazzo (boy)')">R</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'S: sole (sun)')">S</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'T: tavolo (table)')">T</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'U: uva (grape)')">U</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'V: vino (wine)')">V</div>
+    <div class="letter-btn" onclick="highlightLetter(this, 'Z: zaino (backpack)')">Z</div>
+  </div>
+  <div class="display-box" id="display">Click a letter to see an example</div>
+</section>
+
+
+<section class="section">
+  <h2>⚖️ Gender of Nouns</h2>
+  <p>In Italian, all nouns have a grammatical gender: <strong>masculine</strong> or <strong>feminine</strong>. This affects the articles and adjectives used with them.</p>
+
+  <h3>🟢 Common Endings</h3>
+  <ul>
+    <li><strong>-o</strong> → usually masculine (e.g. <em>il libro (the book)</em> – the book)</li>
+    <li><strong>-a</strong> → usually feminine (e.g. <em>la casa (the house)</em> – the house)</li>
+    <li><strong>-e</strong> → can be masculine or feminine</li>
+  </ul>
+
+  <h3>🔍 What about -e?</h3>
+  <p>Words ending in <strong>-e</strong> can be either masculine or feminine, and their gender must be learned together with the article. Here are some examples:</p>
+  <ul>
+    <li><strong>Masculine:</strong> il ristorante (restaurant), il dente (tooth), il giornale (newspaper)</li>
+    <li><strong>Feminine:</strong> la chiave (key), la notte (night), la classe (class)</li>
+  </ul>
+  <p>📝 Tip: Always learn new nouns with their article (e.g. <em>la mano</em>, not just <em>mano</em>).</p>
+
+  <h3>⚠️ Common Exceptions</h3>
+  <ul>
+    <li><strong>Masculine:</strong> il problema (problem), il sistema (system), il tema (essay)</li>
+    <li><strong>Feminine:</strong> la mano (hand), la foto (photo, from fotografia)</li>
+  </ul>
+
+  <div class="exercise-box">
+    <h3>🧠 Exercise 1: Choose the gender of "chiave"</h3>
+    <div id="ex1">
+      <div class="option" onclick="checkAnswer('ex1','Feminine')">Masculine</div>
+      <div class="option" onclick="checkAnswer('ex1','Feminine')">Feminine</div>
+    </div>
+  </div>
+
+  <div class="exercise-box">
+  <h3>🧠 Exercise 2: What is the gender of “la mela”?</h3>
+  <div id="ex2">
+    <div class="option" onclick="checkAnswer('ex2','Feminine')">Masculine</div>
+    <div class="option" onclick="checkAnswer('ex2','Feminine')">Feminine</div>
+  </div>
+</div>
+  </div>
+
+  <div class="exercise-box">
+    <h3>🧠 Exercise 3: Fix the mistake</h3>
+    <div id="ex3">
+      <div class="option" onclick="checkAnswer('ex3','il ragazzo')">la ragazzo</div>
+      <div class="option" onclick="checkAnswer('ex3','il ragazzo')">il ragazzo</div>
+      <div class="option" onclick="checkAnswer('ex3','il ragazzo')">la ragazza</div>
+    </div>
+  </div>
+
+</div>
+
+</section>
+
+
+
+
+<section class="section">
+  <h2>📰 Articles</h2>
+  <p>Italian articles agree with the gender and number of the noun. Here's a simplified guide to the most common definite articles:</p>
+
+  
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Before consonant</th>
+      <th>Before s+consonant / z / ps / gn / x / y</th>
+      <th>Before vowel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Masculine Singular</strong></td>
+      <td>il libro (the book)</td>
+      <td>lo studente (the student) (the student)</td>
+      <td>l’amico (the friend) (the friend)</td>
+    </tr>
+    <tr>
+      <td><strong>Masculine Plural</strong></td>
+      <td>i libri (the books)</td>
+      <td>gli studenti (the students) (the students)</td>
+      <td>gli amici (the friends) (the friends)</td>
+    </tr>
+    <tr>
+      <td><strong>Feminine Singular</strong></td>
+      <td>la casa (the house)</td>
+      <td>—</td>
+      <td>l’amica (the (female) friend)</td>
+    </tr>
+    <tr>
+      <td><strong>Feminine Plural</strong></td>
+      <td>le case (the houses)</td>
+      <td>—</td>
+      <td>le amiche (the (female) friends)</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  <h3>📌 Notes</h3>
+  <p><strong>lo</strong> is used with masculine words that start with:</p>
+  <ul>
+    <li>s + consonant → <em>lo studente (the student) (the student)</em></li>
+    <li>z → <em>lo zaino (the backpack)</em></li>
+    <li>gn → <em>lo gnomo (the gnome)</em></li>
+    <li>ps, pn, x, y → <em>lo psicologo (the psychologist)</em>, <em>lo xilofono (the xylophone)</em></li>
+  </ul>
+
+  <p><strong>l’</strong> is used before vowels: <em>l’amico (the friend) (the friend), l’isola (the island)</em></p>
+  <p><strong>gli</strong> is the plural of both <strong>lo</strong> and <strong>l’</strong> (masculine).</p>
+  <p>📝 Tip: Learn each noun with its article to build good habits early.</p>
+
+  <div class="exercise-box">
+    <h3>🧠 Exercise 1: Choose the correct article for “studente”</h3>
+    <div id="ex4">
+      <div class="option" onclick="checkAnswer('ex4','lo')">il</div>
+      <div class="option" onclick="checkAnswer('ex4','lo')">lo</div>
+      <div class="option" onclick="checkAnswer('ex4','lo')">la</div>
+    </div>
+  </div>
+
+  <div class="exercise-box">
+  <h3>🧠 Exercise 2: What is the gender of “la mela”?</h3>
+  <div id="ex2">
+    <div class="option" onclick="checkAnswer('ex2','Feminine')">Masculine</div>
+    <div class="option" onclick="checkAnswer('ex2','Feminine')">Feminine</div>
+  </div>
+</div>
+  </div>
+
+  <div class="exercise-box">
+    <h3>🧠 Exercise 3: Pick the right article for “amico”</h3>
+    <div id="ex6">
+      <div class="option" onclick="checkAnswer('ex6',"l'")">il</div>
+      <div class="option" onclick="checkAnswer('ex6',"l'")">l'</div>
+      <div class="option" onclick="checkAnswer('ex6',"l'")">la</div>
+    </div>
+  </div>
+
+</div>
+
+
+<h3>🔍 Indefinite Articles (a/an)</h3>
+<p>In Italian, indefinite articles also agree with gender and follow certain pronunciation rules:</p>
+
+<ul>
+  <li><strong>un</strong> → masculine, before most consonants and vowels<br><em>🧾 un libro (a book), un amico (a (male) friend)</em></li>
+  <li><strong>uno</strong> → masculine, before s+consonant, z, gn, ps, x, y<br><em>🧾 uno studente (a student), uno psicologo (a psychologist)</em></li>
+  <li><strong>una</strong> → feminine, before consonants<br><em>🧾 una casa (a house)</em></li>
+  <li><strong>un’</strong> → feminine, before vowels<br><em>🧾 un’amica (a (female) friend)</em></li>
+</ul>
+
+<div class="exercise-box">
+  <h3>🧠 Exercise 4: Choose the correct article — “______ zaino”</h3>
+  <div id="ex7">
+    <div class="option" onclick="checkAnswer('ex7','uno')">un</div>
+    <div class="option" onclick="checkAnswer('ex7','uno')">uno</div>
+    <div class="option" onclick="checkAnswer('ex7','uno')">una</div>
+  </div>
+</div>
+
+<div class="exercise-box">
+  <h3>🧠 Exercise 5: Choose the correct article — “______ ragazza”</h3>
+  <div id="ex8">
+    <div class="option" onclick="checkAnswer('ex8','una')">un</div>
+    <div class="option" onclick="checkAnswer('ex8','una')">una</div>
+    <div class="option" onclick="checkAnswer('ex8','una')">un’</div>
+  </div>
+</div>
+
+<div class="exercise-box">
+  <h3>🧠 Exercise 6: Choose the correct article — “______ psicologo”</h3>
+  <div id="ex9">
+    <div class="option" onclick="checkAnswer('ex9','uno')">un</div>
+    <div class="option" onclick="checkAnswer('ex9','uno')">uno</div>
+    <div class="option" onclick="checkAnswer('ex9','uno')">una</div>
+  </div>
+</div>
+</section>
+
+
+
+<script>
+const alphabet = {
+  A: "amico", B: "banana", C: "casa", D: "dente", E: "elefante", F: "finestra", G: "gatto",
+  H: "hotel", I: "isola", L: "luna", M: "mano", N: "nave", O: "occhio", P: "pane",
+  Q: "quadro", R: "ragazzo", S: "sole", T: "tavolo", U: "uva", V: "vino", Z: "zaino"
+};
+
+const alphabetDiv = document.getElementById("alphabet");
+const display = document.getElementById("display");
+
+Object.keys(alphabet).forEach(letter => {
+  const btn = document.createElement("div");
+  btn.className = "letter-btn";
+  btn.textContent = letter;
+  btn.onclick = function() {
+    document.querySelectorAll(".letter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    display.innerHTML = `<span style='font-size: 32px;'>${letter}</span>: <span style='color: #d15c20;'>${alphabet[letter]}</span>`;
+  };
+  alphabetDiv.appendChild(btn);
+});
+
+function checkAnswer(id, correct) {
+  const options = document.querySelectorAll(`#${id} .option`);
+  options.forEach(opt => {
+    opt.classList.remove("correct", "wrong");
+    if (opt.textContent.trim() === correct || opt.textContent.trim() === correct.replace("\'", "'")) {
+      opt.classList.add("correct");
+    } else {
+      opt.classList.add("wrong");
+    }
+  });
+}
+</script>
+
+<script>
+function highlightLetter(element, text) {
+  document.querySelectorAll('.letter-btn').forEach(b => b.classList.remove('active'));
+  element.classList.add('active');
+  document.getElementById('display').innerText = text;
+}
+</script>
+</body>
+</html>

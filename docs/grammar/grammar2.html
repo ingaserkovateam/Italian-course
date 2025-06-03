@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grammar 2: Verbs & Conjugation</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #fffaf5; margin: 0; padding: 30px; color: #3a2e2e; }
+    h1, h2 { color: #834c69; }
+    .section { margin-bottom: 40px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #e0cfcf; padding: 10px; text-align: center; }
+    .exercise-box {
+      background: #fff3ec;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px dashed #e0b6a1;
+      margin-top: 20px;
+    }
+    .option {
+      margin-top: 10px;
+      cursor: pointer;
+      padding: 8px;
+      background-color: #fce1ce;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+      display: inline-block;
+      min-width: 140px;
+      text-align: center;
+    }
+    .option:hover { background-color: #fdd2b0; }
+    .correct { background-color: #b6e5b6 !important; }
+    .wrong { background-color: #f7b1a5 !important; }
+  </style>
+  <script>
+    function checkAnswer(id, correct) {
+      const options = document.querySelectorAll(`#${id} .option`);
+      options.forEach(opt => {
+        if (opt.innerText.trim() === correct) {
+          opt.classList.add("correct");
+        } else {
+          opt.classList.add("wrong");
+        }
+        opt.onclick = null;
+      });
+    }
+  </script>
+</head>
+<body>
+
+<h1>📘 Grammar 2: Verbs & Conjugation</h1>
+
+<div class="section">
+  <h2>🔍 What is Conjugation?</h2>
+  <p>To conjugate a verb in Italian means to change its ending depending on the subject. All Italian verbs in the infinitive end in <strong>-are</strong>, <strong>-ere</strong>, or <strong>-ire</strong>.</p>
+  <p><strong>Stem</strong> = the part before the ending. Example:</p>
+  <ul>
+    <li><strong>parlare</strong> → <em>parl-</em> + <em>are</em></li>
+    <li><strong>credere</strong> → <em>cred-</em> + <em>ere</em></li>
+    <li><strong>dormire</strong> → <em>dorm-</em> + <em>ire</em></li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>🧠 Regular Verbs</h2>
+
+  <h3>-are: Parlare</h3>
+  <table><tr><th>Pronoun</th><th>Form</th></tr>
+    <tr><td>io</td><td>parlo</td></tr><tr><td>tu</td><td>parli</td></tr><tr><td>lui/lei</td><td>parla</td></tr>
+    <tr><td>noi</td><td>parliamo</td></tr><tr><td>voi</td><td>parlate</td></tr><tr><td>loro</td><td>parlano</td></tr>
+  </table>
+
+  <h3>-ere: Credere</h3>
+  <table><tr><th>Pronoun</th><th>Form</th></tr>
+    <tr><td>io</td><td>credo</td></tr><tr><td>tu</td><td>credi</td></tr><tr><td>lui/lei</td><td>crede</td></tr>
+    <tr><td>noi</td><td>crediamo</td></tr><tr><td>voi</td><td>credete</td></tr><tr><td>loro</td><td>credono</td></tr>
+  </table>
+
+  <h3>-ire: Dormire</h3>
+  <table><tr><th>Pronoun</th><th>Form</th></tr>
+    <tr><td>io</td><td>dormo</td></tr><tr><td>tu</td><td>dormi</td></tr><tr><td>lui/lei</td><td>dorme</td></tr>
+    <tr><td>noi</td><td>dormiamo</td></tr><tr><td>voi</td><td>dormite</td></tr><tr><td>loro</td><td>dormono</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2>⚠️ Irregular Verbs</h2>
+
+  <h3>Essere (to be)</h3>
+  <table><tr><th>Pronoun</th><th>Form</th></tr>
+    <tr><td>io</td><td>sono</td></tr><tr><td>tu</td><td>sei</td></tr><tr><td>lui/lei</td><td>è</td></tr>
+    <tr><td>noi</td><td>siamo</td></tr><tr><td>voi</td><td>siete</td></tr><tr><td>loro</td><td>sono</td></tr>
+  </table>
+
+  <h3>Avere (to have)</h3>
+  <table><tr><th>Pronoun</th><th>Form</th></tr>
+    <tr><td>io</td><td>ho</td></tr><tr><td>tu</td><td>hai</td></tr><tr><td>lui/lei</td><td>ha</td></tr>
+    <tr><td>noi</td><td>abbiamo</td></tr><tr><td>voi</td><td>avete</td></tr><tr><td>loro</td><td>hanno</td></tr>
+  </table>
+
+  <h3>Fare – Andare – Venire</h3>
+  <ul>
+    <li><strong>fare</strong>: faccio, fai, fa, facciamo, fate, fanno</li>
+    <li><strong>andare</strong>: vado, vai, va, andiamo, andate, vanno</li>
+    <li><strong>venire</strong>: vengo, vieni, viene, veniamo, venite, vengono</li>
+  </ul>
+</div>
+
+<div class="section exercise-box">
+  <h3>Exercise 1: Fill in the correct form (parlare, tu)</h3>
+  <p>Tu ______ bene italiano.</p>
+  <div id="ex1">
+    <div class="option" onclick="checkAnswer('ex1', 'parli')">parli</div>
+    <div class="option" onclick="checkAnswer('ex1', 'parli')">parla</div>
+    <div class="option" onclick="checkAnswer('ex1', 'parli')">parlo</div>
+  </div>
+</div>
+
+<div class="section exercise-box">
+  <h3>Exercise 2: Choose the correct “essere” form (lui)</h3>
+  <p>Lui ______ molto simpatico.</p>
+  <div id="ex2">
+    <div class="option" onclick="checkAnswer('ex2', 'è')">è</div>
+    <div class="option" onclick="checkAnswer('ex2', 'è')">sei</div>
+    <div class="option" onclick="checkAnswer('ex2', 'è')">sono</div>
+  </div>
+</div>
+
+<div class="section exercise-box">
+  <h3>Exercise 3: Which sentence is correct?</h3>
+  <div id="ex3">
+    <div class="option" onclick="checkAnswer('ex3', 'correct')">Noi crediamo a lui.</div>
+    <div class="option" onclick="checkAnswer('ex3', 'wrong')">Noi credete a lui.</div>
+    <div class="option" onclick="checkAnswer('ex3', 'wrong')">Noi credi a lui.</div>
+  </div>
+</div>
+
+<div class="section exercise-box">
+  <h3>Exercise 4: Translate to Italian — “They sleep”</h3>
+  <div id="ex4">
+    <div class="option" onclick="checkAnswer('ex4', 'Loro dormono')">Loro dormono</div>
+    <div class="option" onclick="checkAnswer('ex4', 'Loro dormono')">Loro dormiamo</div>
+    <div class="option" onclick="checkAnswer('ex4', 'Loro dormono')">Loro dorme</div>
+  </div>
+</div>
+
+<div class="section exercise-box">
+  <h3>Exercise 5: Choose the correct “avere” form (io)</h3>
+  <p>Io ______ due fratelli.</p>
+  <div id="ex5">
+    <div class="option" onclick="checkAnswer('ex5', 'ho')">ho</div>
+    <div class="option" onclick="checkAnswer('ex5', 'ho')">hai</div>
+    <div class="option" onclick="checkAnswer('ex5', 'ho')">ha</div>
+  </div>
+</div>
+
+<div class="section exercise-box">
+  <h3>Exercise 6: Pick the correct form — fare (voi)</h3>
+  <p>Voi ______ sempre sport.</p>
+  <div id="ex6">
+    <div class="option" onclick="checkAnswer('ex6', 'fate')">fate</div>
+    <div class="option" onclick="checkAnswer('ex6', 'fate')">fanno</div>
+    <div class="option" onclick="checkAnswer('ex6', 'fate')">fa</div>
+  </div>
+</div>
+
+<div class="section exercise-box">
+  <h3>Exercise 7: Complete the sentence (venire, noi)</h3>
+  <p>Noi ______ da Firenze.</p>
+  <div id="ex7">
+    <div class="option" onclick="checkAnswer('ex7', 'veniamo')">veniamo</div>
+    <div class="option" onclick="checkAnswer('ex7', 'veniamo')">venite</div>
+    <div class="option" onclick="checkAnswer('ex7', 'veniamo')">vengono</div>
+  </div>
+</div>
+
+<div class="section exercise-box">
+  <h3>Exercise 8: Translate: “You (pl) go to the museum”</h3>
+  <div id="ex8">
+    <div class="option" onclick="checkAnswer('ex8', 'Voi andate al museo')">Voi andate al museo</div>
+    <div class="option" onclick="checkAnswer('ex8', 'Voi andate al museo')">Voi va al museo</div>
+    <div class="option" onclick="checkAnswer('ex8', 'Voi andate al museo')">Voi andiamo al museo</div>
+  </div>
+</div>
+
+</body>
+</html>
