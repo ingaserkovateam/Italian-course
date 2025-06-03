@@ -4,34 +4,73 @@
 <head>
   <meta charset="UTF-8" />
   <title>Grammar 2: Verbs & Conjugation</title>
-  <style>
-    body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #fffaf5; margin: 0; padding: 30px; color: #3a2e2e; }
-    h1, h2 { color: #834c69; }
-    .section { margin-bottom: 40px; }
-    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-    th, td { border: 1px solid #e0cfcf; padding: 10px; text-align: center; }
-    .exercise-box {
-      background: #fff3ec;
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px dashed #e0b6a1;
-      margin-top: 20px;
-    }
-    .option {
-      margin-top: 10px;
-      cursor: pointer;
-      padding: 8px;
-      background-color: #fce1ce;
-      border-radius: 6px;
-      transition: background-color 0.3s;
-      display: inline-block;
-      min-width: 140px;
-      text-align: center;
-    }
-    .option:hover { background-color: #fdd2b0; }
-    .correct { background-color: #b6e5b6 !important; }
-    .wrong { background-color: #f7b1a5 !important; }
-  </style>
+  
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #fdf9f6;
+    margin: 0;
+    padding: 30px;
+    color: #333;
+  }
+  h1, h2 {
+    color: #5a2d58;
+    text-align: center;
+    border-bottom: 2px solid #d9c7db;
+    padding-bottom: 6px;
+  }
+  .box {
+    max-width: 800px;
+    margin: 30px auto;
+    background: #fff;
+    border: 1px solid #e0d2e8;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.1em;
+  }
+  .exercise-box {
+    background-color: #faf4fa;
+    border-left: 4px solid #7a3d74;
+    border-radius: 6px;
+    padding: 16px;
+    margin-top: 20px;
+  }
+  .option {
+    padding: 10px;
+    margin: 6px 0;
+    background-color: #f4eef6;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .option:hover {
+    background-color: #e3d6e8;
+  }
+  .nav {
+    text-align: center;
+    margin-top: 40px;
+  }
+  .nav a {
+    margin: 10px;
+    background-color: #7a3d74;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1em;
+  }
+</style>
+
   <script>
     function checkAnswer(id, correct) {
       const options = document.querySelectorAll(`#${id} .option`);
@@ -182,9 +221,12 @@
     <div class="option" onclick="checkAnswer('ex8', 'Voi andate al museo')">Voi andiamo al museo</div>
   </div>
 </div>
-<div style="text-align: center; margin-top: 40px;">
-  <a href="grammar1.html" style="padding: 10px 20px; margin: 10px; background-color: #7a3d74; color: white; border-radius: 6px; text-decoration: none;">⬅️ Back to Grammar 1</a>
-  <a href="grammar3.html" style="padding: 10px 20px; margin: 10px; background-color: #5a2d58; color: white; border-radius: 6px; text-decoration: none;">Next Topic ➡️</a>
+
+
+<div class="nav">
+  <a href="grammar1.html">⬅️ Back to Grammar 1</a>
+  <a href="grammar3.html">Next Topic ➡️</a>
 </div>
+
 </body>
 </html>
