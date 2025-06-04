@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Esercizio - Completa le frasi</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('bus_background.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #333;
+    }
+    .container {
+      background: rgba(255,255,255,0.9);
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    h2 {
+      color: #5a2d58;
+      margin-bottom: 20px;
+    }
+    .question {
+      margin-bottom: 25px;
+    }
+    .question p {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .question label {
+      display: block;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+    .btn {
+      background-color: #5a2d58;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      margin-top: 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #7c3e82;
+    }
+    .correct { color: green; font-weight: bold; }
+    .incorrect { color: red; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>📝 Completa le frasi</h2>
+
+  <div class="question" id="q1">
+    <p>1. Mi scusi, questo autobus ___ al centro?</p>
+    <label><input type="radio" name="q1" value="a"> vado</label>
+    <label><input type="radio" name="q1" value="b"> vai</label>
+    <label><input type="radio" name="q1" value="c"> va</label>
+  </div>
+
+  <div class="question" id="q2">
+    <p>2. Devo comprare il ___ qui?</p>
+    <label><input type="radio" name="q2" value="a"> biglietti</label>
+    <label><input type="radio" name="q2" value="b"> biglietto</label>
+    <label><input type="radio" name="q2" value="c"> bigliettare</label>
+  </div>
+
+  <div class="question" id="q3">
+    <p>3. Lo può comprare ___ fermata.</p>
+    <label><input type="radio" name="q3" value="a"> al</label>
+    <label><input type="radio" name="q3" value="b"> da</label>
+    <label><input type="radio" name="q3" value="c"> alla</label>
+  </div>
+
+  <button class="btn" onclick="checkAnswers()">Controlla le risposte</button>
+  <div id="result" style="margin-top:20px; font-size:18px;"></div>
+</div>
+
+<script>
+function checkAnswers() {
+  const answers = {
+    q1: "c",
+    q2: "b",
+    q3: "c"
+  };
+  let score = 0;
+  for (let q in answers) {
+    const radios = document.getElementsByName(q);
+    radios.forEach(r => {
+      if (r.checked) {
+        if (r.value === answers[q]) {
+          score++;
+          r.parentElement.classList.add("correct");
+        } else {
+          r.parentElement.classList.add("incorrect");
+        }
+      }
+    });
+  }
+  document.getElementById("result").innerHTML = `Hai risposto correttamente a <strong>${score}/3</strong> domande.`;
+}
+</script>
+
+</body>
+</html>

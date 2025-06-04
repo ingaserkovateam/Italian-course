@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Scegli il tuo ruolo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f4f0;
+      background-image: url('bus_background.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      font-size: 36px;
+      color: #5a2d58;
+      margin-bottom: 30px;
+      background: rgba(255,255,255,0.8);
+      padding: 10px 30px;
+      border-radius: 10px;
+    }
+    .btn {
+      background-color: #5a2d58;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      margin: 12px;
+      font-size: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #7c3e82;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎭 Scegli il tuo ruolo</h1>
+  <button class="btn" onclick="location.href='play_as_sofia.html'">👩‍🦰 Voglio essere Sofia</button>
+  <button class="btn" onclick="location.href='play_as_marco.html'">👱‍♂️ Voglio essere Marco</button>
+</body>
+</html>

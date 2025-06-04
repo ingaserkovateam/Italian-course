@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mini Story — In Autobus (Back & Forward)</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdf9f6;
+    }
+    .scene {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .scene img.bg {
+      width: 100%;
+      display: block;
+    }
+    .character {
+      position: absolute;
+      bottom: 0px;
+      height: 640px;
+      opacity: 0;
+      transform: translateY(100px);
+      animation: enter 1.2s ease-out forwards, float 3s ease-in-out infinite;
+    }
+    #marco {
+      left: 5%;
+      animation-delay: 0.3s, 1.2s;
+    }
+    #sofia {
+      right: 5%;
+      animation-delay: 0.6s, 1.2s;
+    }
+    @keyframes enter {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    .bubble {
+      position: absolute;
+      max-width: 380px;
+      padding: 14px 18px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+      font-size: 18px;
+      line-height: 1.4;
+      display: none;
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    #bubble1  { top: 10%; left: 12%; }
+    #bubble2  { top: 20%; right: 12%; }
+    #bubble3  { top: 10%; left: 12%; }
+    #bubble4  { top: 20%; right: 12%; }
+    #bubble5  { top: 10%; left: 12%; }
+    #bubble6  { top: 20%; right: 12%; }
+
+    .hint {
+      text-align: center;
+      margin: 25px;
+      color: #5a2d58;
+      font-size: 16px;
+    }
+
+    .visible {
+      display: block !important;
+      animation: popIn 0.5s ease-out forwards;
+    }
+
+    @keyframes popIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      60% {
+        opacity: 1;
+        transform: scale(1.15);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="scene">
+  <img src="bus_background.png" class="bg" alt="Autobus" />
+  <img src="marco_cutout_named.png" class="character" id="marco" alt="Marco" />
+  <img src="sofia_named_bold_largest.png" class="character" id="sofia" alt="Sofia" />
+
+  <div class="bubble" id="bubble1">Mi scusi, questo autobus va al centro?</div>
+  <div class="bubble" id="bubble2">Sì, ma deve scendere fra tre fermate.</div>
+  <div class="bubble" id="bubble3">Devo comprare il biglietto qui?</div>
+  <div class="bubble" id="bubble4">No, lo può comprare alla fermata.</div>
+  <div class="bubble" id="bubble5">Grazie mille!</div>
+  <div class="bubble" id="bubble6">Di niente, buona giornata!</div>
+</div>
+
+<div class="hint">Premi ␣ per andare avanti | ← per tornare indietro</div>
+
+<script>
+let currentLine = 0;
+const bubbles = [
+  document.getElementById("bubble1"),
+  document.getElementById("bubble2"),
+  document.getElementById("bubble3"),
+  document.getElementById("bubble4"),
+  document.getElementById("bubble5"),
+  document.getElementById("bubble6")
+];
+
+function showLine(index) {
+  bubbles.forEach((b, i) => b.classList.remove("visible"));
+  if (index >= 0 && index < bubbles.length) {
+    bubbles[index].classList.add("visible");
+  }
+}
+
+document.addEventListener("keydown", function(event) {
+  if (event.code === "Space") {
+    event.preventDefault();
+    if (currentLine < bubbles.length - 1) {
+      currentLine++;
+      showLine(currentLine);
+    }
+  }
+  if (event.code === "ArrowLeft") {
+    event.preventDefault();
+    if (currentLine > 0) {
+      currentLine--;
+      showLine(currentLine);
+    }
+  }
+});
+
+showLine(currentLine);
+</script>
+
+</body>
+</html>

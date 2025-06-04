@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>🎭 Sei Sofia</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('bus_background.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    .scene {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+    }
+    .character {
+      position: absolute;
+      bottom: 0;
+      height: 640px;
+      animation: float 3s ease-in-out infinite;
+    }
+    #marco { left: 5%; }
+    #sofia { right: 5%; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .bubble {
+      position: absolute;
+      max-width: 420px;
+      padding: 16px 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      font-size: 18px;
+      display: none;
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    #bubble1 { top: 10%; left: 12%; }
+    #bubble2 { top: 20%; left: 12%; }
+    #bubble3 { top: 30%; left: 12%; }
+
+    .visible {
+      display: block !important;
+      animation: popIn 0.5s ease-out forwards;
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.5); }
+      60% { opacity: 1; transform: scale(1.1); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .instructions {
+      text-align: center;
+      color: #5a2d58;
+      font-size: 18px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="scene">
+  <img src="marco_cutout_named.png" class="character" id="marco" alt="Marco" />
+  <img src="sofia_named_bold_largest.png" class="character" id="sofia" alt="Sofia" />
+
+  <div class="bubble" id="bubble1">Mi scusi, questo autobus va al centro?</div>
+  <div class="bubble" id="bubble2">Devo comprare il biglietto qui?</div>
+  <div class="bubble" id="bubble3">Grazie mille!</div>
+</div>
+
+<div class="instructions">🎭 Sei <strong>Sofia</strong>! Rispondi a Marco. Premi ␣ per continuare</div>
+
+<script>
+let currentLine = 0;
+const bubbles = [
+  document.getElementById("bubble1"),
+  document.getElementById("bubble2"),
+  document.getElementById("bubble3")
+];
+
+function showLine(index) {
+  bubbles.forEach(b => b.classList.remove("visible"));
+  if (index >= 0 && index < bubbles.length) {
+    bubbles[index].classList.add("visible");
+  }
+}
+
+document.addEventListener("keydown", function(event) {
+  if (event.code === "Space") {
+    event.preventDefault();
+    if (currentLine < bubbles.length - 1) {
+      currentLine++;
+      showLine(currentLine);
+    }
+  }
+});
+
+showLine(currentLine);
+</script>
+
+</body>
+</html>
